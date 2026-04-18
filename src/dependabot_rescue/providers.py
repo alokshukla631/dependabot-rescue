@@ -44,6 +44,27 @@ def context_from_event_payload(payload: dict[str, Any]) -> PullRequestContext:
     )
 
 
+def context_from_manual_fields(
+    *,
+    title: str,
+    body: str = "",
+    author: str = "",
+    branch: str = "",
+    base_branch: str = "",
+    tool: str | None = None,
+) -> PullRequestContext:
+    """Build a normalized PR context from direct CLI inputs."""
+
+    return PullRequestContext(
+        title=title.strip(),
+        body=body.strip(),
+        author=author.strip(),
+        branch=branch.strip(),
+        base_branch=base_branch.strip(),
+        tool=(tool or infer_update_tool(author=author, branch=branch, title=title)).strip() or "unknown",
+    )
+
+
 def infer_update_tool(author: str, branch: str, title: str) -> str:
     """Infer whether the PR came from Dependabot, Renovate, or neither."""
 

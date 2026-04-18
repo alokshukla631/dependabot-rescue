@@ -21,7 +21,7 @@ _RENOVATE_TITLE_PATTERNS = (
         re.IGNORECASE,
     ),
     re.compile(
-        r"^(?:chore|fix|build|ci)?(?:\(.+?\))?:?\s*update (?P<package>.+?) to "
+        r"^(?:chore|fix|build|ci)?(?:\(.+?\))?:?\s*update (?!dependency\b)(?P<package>.+?) to "
         r"(?P<to_version>v?\S+)$",
         re.IGNORECASE,
     ),

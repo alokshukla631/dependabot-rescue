@@ -6,7 +6,7 @@ The project starts with a simple goal: when a Dependabot or Renovate PR turns re
 
 ## Status
 
-This repository is under active development. As of April 18, 2026, the current MVP already includes:
+Version `0.1.0` is ready. As of April 18, 2026, the current MVP includes:
 
 - GitHub-hosted repositories
 - Dependabot and Renovate pull requests

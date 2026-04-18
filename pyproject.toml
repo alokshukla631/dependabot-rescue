@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dependabot-rescue"
+version = "0.1.0a0"
+description = "Turn failing Dependabot and Renovate PRs into actionable rescue reports."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Alok Shukla" }
+]
+dependencies = []
+
+[project.scripts]
+dep-rescue = "dependabot_rescue.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

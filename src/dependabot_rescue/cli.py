@@ -14,7 +14,7 @@ from dependabot_rescue.providers import (
 from dependabot_rescue.reporting import report_to_json, report_to_markdown
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="dep-rescue")
+    parser = argparse.ArgumentParser(prog="dep_rescue")
     subparsers = parser.add_subparsers(dest="command")
     analyze = subparsers.add_parser("analyze", help="Analyze a dependency update PR.")
     analyze.add_argument("--event-path", help="Path to a GitHub event payload JSON file.")

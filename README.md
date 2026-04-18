@@ -59,13 +59,13 @@ python -m pip install -e .
 Analyze a GitHub event payload plus one or more CI logs:
 
 ```bash
-dep-rescue analyze --event-path event.json --log-file ci.log
+dep_rescue analyze --event-path event.json --log-file ci.log
 ```
 
 Analyze without a GitHub event file:
 
 ```bash
-dep-rescue analyze \
+dep_rescue analyze \
   --title "Bump requests from 2.31.0 to 2.32.0" \
   --author "dependabot[bot]" \
   --branch "dependabot/pip/requests-2.32.0" \
@@ -75,7 +75,7 @@ dep-rescue analyze \
 Write machine-readable JSON output:
 
 ```bash
-dep-rescue analyze --event-path event.json --log-file ci.log --format json --output report.json
+dep_rescue analyze --event-path event.json --log-file ci.log --format json --output report.json
 ```
 
 ## Current Capabilities

@@ -15,7 +15,7 @@ authors = [
 dependencies = []
 
 [project.scripts]
-dep-rescue = "dependabot_rescue.cli:main"
+dep_rescue = "dependabot_rescue.cli:main"
 
 [tool.setuptools]
 package-dir = { "" = "src" }

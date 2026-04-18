@@ -18,3 +18,4 @@ Initial public release of `dependabot-rescue`.
 
 - Renovate package extraction for `update dependency ...` PR titles
 - Windows console entry point stability by switching the published script name to `dep_rescue`
+- GitHub Actions workflow compatibility by upgrading to `actions/checkout@v6` and `actions/setup-python@v6`

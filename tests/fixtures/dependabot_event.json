@@ -1,0 +1,16 @@
+{
+  "pull_request": {
+    "title": "Bump requests from 2.31.0 to 2.32.0",
+    "body": "This PR updates one dependency in the Python service.",
+    "number": 12,
+    "user": {
+      "login": "dependabot[bot]"
+    },
+    "head": {
+      "ref": "dependabot/pip/requests-2.32.0"
+    },
+    "base": {
+      "ref": "main"
+    }
+  }
+}

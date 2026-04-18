@@ -1,0 +1,2 @@
+ImportError: cannot import name 'DEFAULT_CIPHERS' from 'urllib3.util.ssl_'
+FAILED tests/test_http.py::test_default_tls

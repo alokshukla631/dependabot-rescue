@@ -6,12 +6,15 @@ The project starts with a simple goal: when a Dependabot or Renovate PR turns re
 
 ## Status
 
-This repository is under active development. The current milestone is a focused MVP for:
+This repository is under active development. As of April 18, 2026, the current MVP already includes:
 
 - GitHub-hosted repositories
 - Dependabot and Renovate pull requests
 - Python and JavaScript/TypeScript projects
 - CI failure classification and rescue report generation
+- Markdown and JSON report output
+- Local CLI execution from event payloads or manual PR fields
+- Unit tests and GitHub Actions CI
 
 ## Why this exists
 
@@ -45,14 +48,49 @@ Planning and design documents:
 - Deep package-manager-specific changelog scraping
 - Automatic PR commenting without an explicit token or workflow
 
-## Development
+## Quick Start
 
-Implementation is intentionally starting small and standard-library-first so contributors can run it easily.
-
-Target command:
+Install locally:
 
 ```bash
-python -m dependabot_rescue.cli analyze --event-path event.json --log-file ci.log
+python -m pip install -e .
+```
+
+Analyze a GitHub event payload plus one or more CI logs:
+
+```bash
+dep-rescue analyze --event-path event.json --log-file ci.log
+```
+
+Analyze without a GitHub event file:
+
+```bash
+dep-rescue analyze \
+  --title "Bump requests from 2.31.0 to 2.32.0" \
+  --author "dependabot[bot]" \
+  --branch "dependabot/pip/requests-2.32.0" \
+  --log-file ci.log
+```
+
+Write machine-readable JSON output:
+
+```bash
+dep-rescue analyze --event-path event.json --log-file ci.log --format json --output report.json
+```
+
+## Current Capabilities
+
+- infer whether a PR came from Dependabot or Renovate
+- extract package/version updates from common PR title, branch, and body formats
+- classify CI logs into dependency conflict, lockfile drift, import error, removed API, runtime mismatch, compile failure, test failure, or unknown
+- generate action-oriented rescue reports with evidence snippets
+
+## Local Testing
+
+Run the test suite with:
+
+```bash
+PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
 ## Roadmap

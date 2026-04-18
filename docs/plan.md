@@ -71,6 +71,18 @@ Given a dependency update PR and CI logs, `dependabot-rescue` should produce a c
 - Fix issues in separate commits
 - Cut the first tagged release
 
+## Current Progress
+
+Completed on April 18, 2026:
+
+- public GitHub repository created
+- planning and design docs written
+- normalized PR context and dependency update extraction implemented
+- CI log classification and report rendering implemented
+- CLI wired for event-file and manual-input usage
+- unit tests and CI workflow added
+- first bug filed and fixed through issue `#1`
+
 ## Acceptance Criteria for v0.1.0
 
 - A user can run one command against an event payload and CI log files

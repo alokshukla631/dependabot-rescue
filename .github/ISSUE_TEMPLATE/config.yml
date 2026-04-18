@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Project README
+    url: https://github.com/alokshukla631/dependabot-rescue#readme
+    about: Start here for installation, usage, and current scope.

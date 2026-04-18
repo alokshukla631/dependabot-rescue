@@ -120,3 +120,17 @@ tests/
 - automated patch recommendation templates
 - GitHub PR comment mode
 - optional LLM summarization on top of deterministic evidence extraction
+
+## Implementation Status
+
+Implemented in the current repository:
+
+- `models.py`
+- `providers.py`
+- `updates.py`
+- `logs.py`
+- `reporting.py`
+- `analysis.py`
+- `cli.py`
+
+The current implementation is intentionally deterministic and evidence-first. That keeps the first release inspectable and testable before more autonomous behavior is added.
